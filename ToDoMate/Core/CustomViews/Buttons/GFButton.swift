@@ -39,5 +39,8 @@ final class GFButton: UIButton {
         self.backgroundColor = backgroundColor
         setTitle(title, for: .normal)
     }
+    func click(targetOne:Any?,action:Selector,controlEvents:UIControl.Event){
+        addTarget(targetOne, action: action, for: controlEvents)
+    }
     
 }

@@ -37,7 +37,7 @@ extension LoginViewModel:LoginViewInterface {
     func login(){
         print("username: => \(usernameText)")
           print("password: => \(passwordText)")
-        view?.getValues(first: usernameText!, second: passwordText!)
+//        view?.getValues(first: usernameText!, second: passwordText!)
 //      guard let view = view, let usernameText = usernameText, let passwordText = passwordText else {
 //          return
 //      }

@@ -10,15 +10,15 @@ import UIKit
 
 class GFAlert : UIViewController{
     let containerView = GFContainerView()
-    let titleLabel = GFTitleLabel()
-    let messageLabel = GFBodyLabel()
+    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20, color: .label, text: "")
+    let messageLabel = GFBodyLabel(textAlignment: .center, color: .secondaryLabel, text: "")
     let actionButton = GFButton(backgroundColor: .systemRed, title: "Ok")
     
     var alertTitle: String?
     var message: String?
     var buttonTitle: String?
     
-    let padding: CGFloat = 20
+    let padding: CGFloat = 40
     
     init(title:String, message:String, buttonTitle:String){
         super.init(nibName: nil, bundle: nil)

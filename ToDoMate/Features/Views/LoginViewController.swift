@@ -59,7 +59,7 @@ final class LoginViewController: UIViewController{
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 300)
+            headerView.heightAnchor.constraint(equalToConstant: Heights.headerViewHeight)
         ])
     }
     
@@ -68,28 +68,28 @@ final class LoginViewController: UIViewController{
         
         
         NSLayoutConstraint.activate([
-            usernameTextField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: paddingTP),
-            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: paddingLR),
-            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -paddingLR),
-            usernameTextField.heightAnchor.constraint(equalToConstant: 50),
+            usernameTextField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Paddings.paddingTP),
+            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Paddings.paddingLR),
+            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingLR),
+            usernameTextField.heightAnchor.constraint(equalToConstant: Heights.loginButtonHeight),
             
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: paddingTP),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: paddingLR),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -paddingLR),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: Paddings.paddingTP),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Paddings.paddingLR),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingLR),
+            passwordTextField.heightAnchor.constraint(equalToConstant: Heights.loginButtonHeight),
             
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: paddingTP),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: paddingButton),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -paddingButton),
-            loginButton.heightAnchor.constraint(equalToConstant: 40),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Paddings.paddingTP),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Paddings.paddingButton),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingButton),
+            loginButton.heightAnchor.constraint(equalToConstant: Heights.loginButtonHeight),
             
-            staticLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: paddingButton),
+            staticLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: Paddings.paddingTP),
             staticLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            staticLabel.heightAnchor.constraint(equalToConstant: 20),
+            staticLabel.heightAnchor.constraint(equalToConstant: Heights.staticLabelHeight),
             
             createLabel.topAnchor.constraint(equalTo: staticLabel.bottomAnchor, constant: (paddingTP) / 2),
             createLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            createLabel.heightAnchor.constraint(equalToConstant: 20),
+            createLabel.heightAnchor.constraint(equalToConstant: Heights.staticLabelHeight),
         ])
     }
     
@@ -105,7 +105,7 @@ final class LoginViewController: UIViewController{
     }
     
     @objc func createActionLabel(){
-        let register = RegisterViewController()
+        let register = RegisterViewController(registerViewModel: RegisterViewModel())
         navigationController?.pushViewController(register, animated: true)
     }
     @objc func startLogin(){
@@ -153,8 +153,8 @@ extension LoginViewController: LoginViewControllerInterface {
     }
     
     func getValues(first:String,second:String){
-        let home = HomeViewController(task1: first, task2: second)
-        navigationController?.pushViewController(home, animated: true)
+//        let home = HomeViewController(task1: first, task2: second)
+//        navigationController?.pushViewController(home, animated: true)
     }
 }
 

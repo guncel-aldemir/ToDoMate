@@ -23,6 +23,12 @@ final class GFTextField:UITextField {
         self.init(frame: .zero)
         self.placeholder = placeholder
         self.isSecureTextEntry = textSecure
+        guard textSecure == false else {
+            textContentType = .password
+            return
+        }
+        
+       
     }
     
     fileprivate func configure(){

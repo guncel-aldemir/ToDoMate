@@ -34,5 +34,6 @@ final class GFBodyLabel:UILabel{
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
         font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        numberOfLines = 4
     }
 }

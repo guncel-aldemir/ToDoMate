@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA114B232B712F2D00A3A264 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B222B712F2D00A3A264 /* Constants.swift */; };
 		FA81391E2B700AF000F1D597 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */; };
 		FA8139202B700B0100F1D597 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */; };
 		FA8139222B7030DE00F1D597 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA114B222B712F2D00A3A264 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA114B212B712F1700A3A264 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA114B222B712F2D00A3A264 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		FA8139232B70316000F1D597 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		FA90861C2B6EC16400119009 /* ToDoMate */ = {
 			isa = PBXGroup;
 			children = (
+				FA114B212B712F1700A3A264 /* Utilities */,
 				FA90863F2B6ED61000119009 /* Features */,
 				FA90863B2B6ED45D00119009 /* Core */,
 				FA90861D2B6EC16400119009 /* AppDelegate.swift */,
@@ -311,6 +322,7 @@
 				FA90864F2B6EE23700119009 /* GFSubtitleLabel.swift in Sources */,
 				FA90861E2B6EC16400119009 /* AppDelegate.swift in Sources */,
 				FA90864D2B6EE20800119009 /* GFTitleLabel.swift in Sources */,
+				FA114B232B712F2D00A3A264 /* Constants.swift in Sources */,
 				FA9086452B6EDE2C00119009 /* ProfileViewController.swift in Sources */,
 				FA8139252B70317800F1D597 /* GFAlert.swift in Sources */,
 				FA9086202B6EC16400119009 /* SceneDelegate.swift in Sources */,
@@ -455,6 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LTK3W9M9W5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoMate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ToDoMate;
@@ -483,6 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LTK3W9M9W5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoMate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ToDoMate;
