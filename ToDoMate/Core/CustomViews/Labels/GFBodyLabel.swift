@@ -19,12 +19,12 @@ final class GFBodyLabel:UILabel{
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(textAlignment: NSTextAlignment, color:UIColor,text:String,userInteraction:Bool){
+    convenience init(textAlignment: NSTextAlignment, color:UIColor,text:String){
         self.init(frame: .zero)
         self.textAlignment = textAlignment
         self.textColor = color
         self.text = text
-        self.isUserInteractionEnabled = userInteraction
+       
     }
     private func configure(){
         

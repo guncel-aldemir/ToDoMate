@@ -24,7 +24,7 @@ final class GFTabBarController:UITabBarController{
     fileprivate func createTabBar() {
         UITabBar.appearance().tintColor = .label
         viewControllers = [
-            createNC(viewController: LoginViewController(loginViewModel: LoginViewModel()), title: "Home", styleIcon:"house.fill", tag: 0),
+            createNC(viewController: LoginViewController(viewModel: LoginViewModel()), title: "Home", styleIcon:"house.fill", tag: 0),
             createNC(viewController: ProfileViewController(), title: "Profile", styleIcon: "person.circle.fill", tag: 1)
         ]
         tabBar.backgroundColor = .systemBackground
