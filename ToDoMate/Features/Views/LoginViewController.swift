@@ -36,9 +36,7 @@ final class LoginViewController: UIViewController{
     let staticLabel = GFBodyLabel(textAlignment: .center, color: .label,text: "New Around Here?")
     let createLabel = GFBodyLabel(textAlignment: .center, color: .systemBlue, text: "Create An Account")
     
-    let paddingTP: CGFloat = 20
-    let paddingLR:CGFloat = 50
-    let paddingButton:CGFloat = 100
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +85,7 @@ final class LoginViewController: UIViewController{
             staticLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             staticLabel.heightAnchor.constraint(equalToConstant: Heights.staticLabelHeight),
             
-            createLabel.topAnchor.constraint(equalTo: staticLabel.bottomAnchor, constant: (paddingTP) / 2),
+            createLabel.topAnchor.constraint(equalTo: staticLabel.bottomAnchor, constant: (Paddings.paddingTP) / 2),
             createLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             createLabel.heightAnchor.constraint(equalToConstant: Heights.staticLabelHeight),
         ])
@@ -99,14 +97,19 @@ final class LoginViewController: UIViewController{
     }
     
     func createAccountTapGesture(){
+        print("clicked")
         let createTap = UITapGestureRecognizer(target:self, action: #selector(createActionLabel))
+        print("clicked2")
         createLabel.addGestureRecognizer(createTap)
         createLabel.isUserInteractionEnabled = true
     }
     
     @objc func createActionLabel(){
+        print("clicked 3")
         let register = RegisterViewController(registerViewModel: RegisterViewModel())
-        navigationController?.pushViewController(register, animated: true)
+       
+      navigationController?.pushViewController(register, animated: true)
+        print("clicked 4")
     }
     @objc func startLogin(){
         print("clicked")

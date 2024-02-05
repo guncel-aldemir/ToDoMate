@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FA114B232B712F2D00A3A264 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B222B712F2D00A3A264 /* Constants.swift */; };
+		FA114B272B7169EB00A3A264 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B262B7169EB00A3A264 /* Encodable.swift */; };
+		FA114B292B71886600A3A264 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B282B71886500A3A264 /* ProfileViewModel.swift */; };
+		FA114B2B2B71946800A3A264 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B2A2B71946800A3A264 /* User.swift */; };
 		FA81391E2B700AF000F1D597 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */; };
 		FA8139202B700B0100F1D597 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */; };
 		FA8139222B7030DE00F1D597 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		FA114B222B712F2D00A3A264 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA114B262B7169EB00A3A264 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		FA114B282B71886500A3A264 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		FA114B2A2B71946800A3A264 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			children = (
 				FA9086542B6EF10900119009 /* LoginViewModel.swift */,
 				FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */,
+				FA114B282B71886500A3A264 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 		FA90863E2B6ED47E00119009 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA114B2A2B71946800A3A264 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 			children = (
 				FA90865C2B6F010000119009 /* UIView+Ext.swift */,
 				FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */,
+				FA114B262B7169EB00A3A264 /* Encodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,11 +331,14 @@
 				FA90864F2B6EE23700119009 /* GFSubtitleLabel.swift in Sources */,
 				FA90861E2B6EC16400119009 /* AppDelegate.swift in Sources */,
 				FA90864D2B6EE20800119009 /* GFTitleLabel.swift in Sources */,
+				FA114B292B71886600A3A264 /* ProfileViewModel.swift in Sources */,
 				FA114B232B712F2D00A3A264 /* Constants.swift in Sources */,
 				FA9086452B6EDE2C00119009 /* ProfileViewController.swift in Sources */,
 				FA8139252B70317800F1D597 /* GFAlert.swift in Sources */,
 				FA9086202B6EC16400119009 /* SceneDelegate.swift in Sources */,
 				FA9086432B6EDE0800119009 /* HomeViewController.swift in Sources */,
+				FA114B272B7169EB00A3A264 /* Encodable.swift in Sources */,
+				FA114B2B2B71946800A3A264 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

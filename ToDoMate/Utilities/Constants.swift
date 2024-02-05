@@ -22,3 +22,8 @@ enum Heights {
     static let createLabelHeight:CGFloat = 20
 }
 
+enum Register {
+    static let capitalLetterRegEx: String  = "[A-Z]+"
+    static let numberRegEx:String  = "[0-9]+"
+    static let specialCharacterRegEx: String  = "[.*&^%$#@()/]+"
+}

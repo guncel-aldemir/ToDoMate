@@ -10,6 +10,7 @@ protocol RegisterInterface:AnyObject{
     func configure()
     func register()
     func showAlert(title:String,message:String,buttonTitle:String)
+    func navigateHome()
 }
 class RegisterViewController: UIViewController {
 
@@ -98,6 +99,11 @@ extension RegisterViewController:RegisterInterface{
     }
     func showAlert(title: String, message: String, buttonTitle: String) {
         presentGFAlert(title: title, message: message, buttonTitle: buttonTitle)
+    }
+    
+    func navigateHome() {
+        let home = HomeViewController()
+        navigationController?.pushViewController(home, animated: true)
     }
 }
 extension RegisterViewController:UITextFieldDelegate{
