@@ -33,7 +33,7 @@ class GFTitleLabel: UILabel {
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping
         translatesAutoresizingMaskIntoConstraints = false
-        
+       
         
     }
 }

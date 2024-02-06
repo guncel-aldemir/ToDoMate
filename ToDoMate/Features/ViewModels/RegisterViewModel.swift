@@ -48,11 +48,11 @@ extension RegisterViewModel:RegisterViewModelInterface{
         print("views model : \(passwordText)")
         
 
-        guard fullNameText.count > 2 else {
+        guard fullNameText.lowercased().count > 2 else {
             view?.showAlert(title: "Missing username characters.", message: "Your Username has to includes 3 or more characters", buttonTitle: "Ok")
             return
         }
-        guard emailText.contains("@") && emailText.contains(".") && emailText.range(of: Register.specialCharacterRegEx, options: .regularExpression) != nil else {
+        guard emailText.lowercased().contains("@") && emailText.lowercased().contains(".") && emailText.lowercased().range(of: Register.specialCharacterRegEx, options: .regularExpression) != nil else {
             view?.showAlert(title: "Email Address Wrong", message: "Your email address has to include '@' and at least one special character. ", buttonTitle: "Ok")
             return
         }
@@ -60,11 +60,13 @@ extension RegisterViewModel:RegisterViewModelInterface{
             view?.showAlert(title: "Password Requirements Not Met", message: "Your password has to be 6 or more characters, include at least one uppercase letter, at least one number, and at least one special character.", buttonTitle: "Ok")
             return
         }
-        createAccount(name:fullNameText,user:emailText,password:passwordText)
+        createAccount(name:fullNameText.lowercased(),user:emailText.lowercased(),password:passwordText)
         
     }
     
     func createAccount(name:String,user:String,password:String) {
+        print("name = \(user)")
+        print("user = \(name)")
         Auth.auth().createUser(withEmail: user, password: password) { [weak self] result, error in
             guard let self = self else{return}
             guard let userId = result?.user.uid else {return}
@@ -74,12 +76,12 @@ extension RegisterViewModel:RegisterViewModelInterface{
         
     }
     private func insertUserRecord(id:String,name:String,user:String,password:String){
-        let newUser = User(id: id, name: name, email: user, joined: Date().timeIntervalSince1970)
+        let newUser = RegisterUser(id: id, name: name, email: user, password:password, joined: Date().timeIntervalSince1970)
         let db = Firestore.firestore()
         db.collection("users").document(id).setData(newUser.asDictionary())
        
 //        profileDelegate?.getUserInfos(with: newUser)
-//        view?.navigateHome()
+       view?.navigateHome()
     }
     
 }

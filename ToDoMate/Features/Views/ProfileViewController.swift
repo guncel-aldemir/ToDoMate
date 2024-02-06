@@ -10,6 +10,7 @@ import UIKit
 protocol ProfileInterface:AnyObject {
     func configure()
     func register()
+    func loginStart()
 }
 class ProfileViewController: UIViewController {
    
@@ -62,6 +63,18 @@ extension ProfileViewController:ProfileInterface{
             logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingButton),
             logoutButton.heightAnchor.constraint(equalToConstant: Heights.registerButtonHeight)
         ])
+    }
+    func loginStart(){
+        if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
+            sceneDelegate.checkAuthentication()
+            
+        }
+//        let loginVC = view
+//        self.present(view, animated: true) {
+//            self.navigationController?.popToRootViewController(animated: false)
+//        }
+       // navigationController?.setViewControllers([loginVC], animated: true)
+        
     }
     @objc func register() {
         print("register clicked")

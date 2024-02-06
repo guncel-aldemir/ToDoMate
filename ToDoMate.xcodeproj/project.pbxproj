@@ -10,7 +10,9 @@
 		FA114B232B712F2D00A3A264 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B222B712F2D00A3A264 /* Constants.swift */; };
 		FA114B272B7169EB00A3A264 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B262B7169EB00A3A264 /* Encodable.swift */; };
 		FA114B292B71886600A3A264 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B282B71886500A3A264 /* ProfileViewModel.swift */; };
-		FA114B2B2B71946800A3A264 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B2A2B71946800A3A264 /* User.swift */; };
+		FA114B2B2B71946800A3A264 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA114B2A2B71946800A3A264 /* RegisterUser.swift */; };
+		FA1758512B72EB530056B783 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1758502B72EB530056B783 /* HomeViewModel.swift */; };
+		FA1758532B72EF570056B783 /* GFTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1758522B72EF570056B783 /* GFTableView.swift */; };
 		FA81391E2B700AF000F1D597 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */; };
 		FA8139202B700B0100F1D597 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */; };
 		FA8139222B7030DE00F1D597 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */; };
@@ -42,7 +44,9 @@
 		FA114B222B712F2D00A3A264 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FA114B262B7169EB00A3A264 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		FA114B282B71886500A3A264 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		FA114B2A2B71946800A3A264 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA114B2A2B71946800A3A264 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
+		FA1758502B72EB530056B783 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FA1758522B72EF570056B783 /* GFTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTableView.swift; sourceTree = "<group>"; };
 		FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -91,6 +95,25 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		FA1758542B72EF5B0056B783 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				FA1758522B72EF570056B783 /* GFTableView.swift */,
+			);
+			path = TableViews;
+			sourceTree = "<group>";
+		};
+		FA1758552B72F1690056B783 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA90861F2B6EC16400119009 /* SceneDelegate.swift */,
+				FA9086262B6EC16800119009 /* Assets.xcassets */,
+				FA9086282B6EC16800119009 /* LaunchScreen.storyboard */,
+				FA90861D2B6EC16400119009 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		FA8139232B70316000F1D597 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +142,8 @@
 		FA90861C2B6EC16400119009 /* ToDoMate */ = {
 			isa = PBXGroup;
 			children = (
-				FA114B212B712F1700A3A264 /* Utilities */,
 				FA90863F2B6ED61000119009 /* Features */,
 				FA90863B2B6ED45D00119009 /* Core */,
-				FA90861D2B6EC16400119009 /* AppDelegate.swift */,
-				FA90861F2B6EC16400119009 /* SceneDelegate.swift */,
-				FA9086262B6EC16800119009 /* Assets.xcassets */,
-				FA9086282B6EC16800119009 /* LaunchScreen.storyboard */,
 				FA90862B2B6EC16800119009 /* Info.plist */,
 				FA9086312B6EC1AC00119009 /* GoogleService-Info.plist */,
 			);
@@ -135,6 +153,8 @@
 		FA90863B2B6ED45D00119009 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FA1758552B72F1690056B783 /* Application */,
+				FA114B212B712F1700A3A264 /* Utilities */,
 				FA90865B2B6F00EF00119009 /* Extensions */,
 				FA9086482B6EE16900119009 /* CustomViews */,
 			);
@@ -158,6 +178,7 @@
 				FA9086542B6EF10900119009 /* LoginViewModel.swift */,
 				FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */,
 				FA114B282B71886500A3A264 /* ProfileViewModel.swift */,
+				FA1758502B72EB530056B783 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,7 +186,7 @@
 		FA90863E2B6ED47E00119009 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA114B2A2B71946800A3A264 /* User.swift */,
+				FA114B2A2B71946800A3A264 /* RegisterUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +204,7 @@
 		FA9086482B6EE16900119009 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FA1758542B72EF5B0056B783 /* TableViews */,
 				FA8139232B70316000F1D597 /* Alerts */,
 				FA9086562B6EF96100119009 /* Buttons */,
 				FA9086512B6EF06B00119009 /* TextFields */,
@@ -335,10 +357,12 @@
 				FA114B232B712F2D00A3A264 /* Constants.swift in Sources */,
 				FA9086452B6EDE2C00119009 /* ProfileViewController.swift in Sources */,
 				FA8139252B70317800F1D597 /* GFAlert.swift in Sources */,
+				FA1758532B72EF570056B783 /* GFTableView.swift in Sources */,
+				FA1758512B72EB530056B783 /* HomeViewModel.swift in Sources */,
 				FA9086202B6EC16400119009 /* SceneDelegate.swift in Sources */,
 				FA9086432B6EDE0800119009 /* HomeViewController.swift in Sources */,
 				FA114B272B7169EB00A3A264 /* Encodable.swift in Sources */,
-				FA114B2B2B71946800A3A264 /* User.swift in Sources */,
+				FA114B2B2B71946800A3A264 /* RegisterUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

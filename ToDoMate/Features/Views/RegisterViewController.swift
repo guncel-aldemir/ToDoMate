@@ -87,9 +87,6 @@ extension RegisterViewController:RegisterInterface{
     }
     
     @objc func register() {
-        print("clickeddd")
-
-
         registerViewModel?.fullNameText = createFullTextField.text
         registerViewModel?.emailText = createEmailTextField.text
         registerViewModel?.passwordText = createPasswordTextField.text 
@@ -102,8 +99,10 @@ extension RegisterViewController:RegisterInterface{
     }
     
     func navigateHome() {
-        let home = HomeViewController()
-        navigationController?.pushViewController(home, animated: true)
+        if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
+            sceneDelegate.checkAuthentication()
+            
+        }
     }
 }
 extension RegisterViewController:UITextFieldDelegate{

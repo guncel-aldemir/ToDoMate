@@ -9,9 +9,10 @@ import UIKit
 
 protocol LoginViewControllerInterface:AnyObject {
     func configure()
-    func loginButtonClicked()
+   // func loginButtonClicked()
     func showAlert(title:String,message:String,buttonTitle:String)
-    func getValues(first:String,second:String)
+    func getValues()
+    
 }
 final class LoginViewController: UIViewController{
     
@@ -29,7 +30,7 @@ final class LoginViewController: UIViewController{
     }
     
     let headerView = GFHeaderView(titleText: "ToDoMate", subtitleText: "Get Things Done", backgroundColor: .systemPink)
-    var usernameTextField = GFTextField(placeholder: "Username",textSecure: false)
+    var emailTextField = GFTextField(placeholder: "Email",textSecure: false)
     var passwordTextField = GFTextField(placeholder: "Password", textSecure: true)
     let loginButton = GFButton(backgroundColor: .systemBlue, title: "Log in")
     
@@ -62,16 +63,16 @@ final class LoginViewController: UIViewController{
     }
     
     fileprivate func configureTextFields(){
-        view.addSubviews(usernameTextField,passwordTextField,loginButton,staticLabel,createLabel)
+        view.addSubviews(emailTextField,passwordTextField,loginButton,staticLabel,createLabel)
         
         
         NSLayoutConstraint.activate([
-            usernameTextField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Paddings.paddingTP),
-            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Paddings.paddingLR),
-            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingLR),
-            usernameTextField.heightAnchor.constraint(equalToConstant: Heights.loginButtonHeight),
+            emailTextField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Paddings.paddingTP),
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Paddings.paddingLR),
+            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingLR),
+            emailTextField.heightAnchor.constraint(equalToConstant: Heights.loginButtonHeight),
             
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: Paddings.paddingTP),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: Paddings.paddingTP),
             passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Paddings.paddingLR),
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Paddings.paddingLR),
             passwordTextField.heightAnchor.constraint(equalToConstant: Heights.loginButtonHeight),
@@ -97,9 +98,7 @@ final class LoginViewController: UIViewController{
     }
     
     func createAccountTapGesture(){
-        print("clicked")
         let createTap = UITapGestureRecognizer(target:self, action: #selector(createActionLabel))
-        print("clicked2")
         createLabel.addGestureRecognizer(createTap)
         createLabel.isUserInteractionEnabled = true
     }
@@ -113,24 +112,10 @@ final class LoginViewController: UIViewController{
     }
     @objc func startLogin(){
         print("clicked")
-        let changeUsername = usernameTextField.text
-        let changePassword = passwordTextField.text
+        loginViewModel?.emailText = emailTextField.text
+        loginViewModel?.passwordText = passwordTextField.text
+        loginViewModel?.login()
         
-        guard let changeUsername = changeUsername, let changePassword = changePassword else {
-            return
-        }
-        switch (changeUsername.count >= 3,changePassword.count >= 6){
-        case(false,false):
-            showAlert(title: "Username and Password Wrong", message: "Please write your correct username and password", buttonTitle: "Ok")
-        case(true,false):
-            showAlert(title: "Password short", message: "Please write your correct password", buttonTitle: "Ok")
-        case(false,true):
-            showAlert(title: "Username short", message: "Please write your correct username", buttonTitle: "Ok")
-        default:
-            loginViewModel?.usernameText = changeUsername
-            loginViewModel?.passwordText = changePassword
-            loginViewModel?.login()
-        }
        
     }
     
@@ -138,26 +123,30 @@ final class LoginViewController: UIViewController{
 extension LoginViewController: LoginViewControllerInterface {
     func configure(){
         view.backgroundColor = .systemBackground
-        usernameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
         configureHeader()
         configureTextFields()
         createDismissKeyboardTapGesture()
         createAccountTapGesture()
-        
+        loginButton.addTarget(self, action: #selector(startLogin), for: .touchUpInside)
     }
     func loginButtonClicked(){
        
-        loginButton.addTarget(self, action: #selector(startLogin), for: .touchUpInside)
+        
         
     }
     func showAlert(title:String,message:String,buttonTitle:String){
         presentGFAlert(title: title, message: message, buttonTitle: buttonTitle)
     }
     
-    func getValues(first:String,second:String){
-//        let home = HomeViewController(task1: first, task2: second)
-//        navigationController?.pushViewController(home, animated: true)
+    func getValues(){
+        print("çalıştı")
+        if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
+            sceneDelegate.checkAuthentication()
+            
+        }
+
     }
 }
 

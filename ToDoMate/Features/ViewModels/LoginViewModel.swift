@@ -6,52 +6,83 @@
 //
 
 import Foundation
-
+import FirebaseAuth
+import FirebaseFirestore
 protocol LoginViewInterface:AnyObject {
     
-  // var view:LoginViewControllerInterface? {get set}
-//    var usernameText:String? {get set}
-//    var passwordText:String? {get set}
+    // var view:LoginViewControllerInterface? {get set}
+    //    var usernameText:String? {get set}
+    //    var passwordText:String? {get set}
     func login()
     func viewDidLoad()
+    func validate(user:String,password:String)
 }
 final class LoginViewModel {
-    var usernameText:String?
+    var emailText:String?
     var passwordText:String?
     
     weak var view: LoginViewControllerInterface?
-
-     func validate(){
-        
-    }
-    
     
 }
 extension LoginViewModel:LoginViewInterface {
     func viewDidLoad() {
         view?.configure()
-        view?.loginButtonClicked()
+        //view?.loginButtonClicked()
     }
     
     
     func login(){
-        print("username: => \(usernameText)")
-          print("password: => \(passwordText)")
-//        view?.getValues(first: usernameText!, second: passwordText!)
-//      guard let view = view, let usernameText = usernameText, let passwordText = passwordText else {
-//          return
-//      }
+        print("email: => \(emailText)")
+        print("password: => \(passwordText)")
+        let changeEmail = emailText
+        let changePassword = passwordText
+        guard let changeEmail = changeEmail, let changePassword = changePassword else {
+            return
+        }
 
-//      switch(usernameText.trimmingCharacters(in: .whitespaces),passwordText.trimmingCharacters(in: .whitespaces)){
-//      case (nil,nil):
-//          view.showAlert(title: "Empty Username and Password", message: "Please Enter Your Username and Password ", buttonTitle: "Ok")
-//      case (_,nil):
-//          view.showAlert(title: "Empty Password", message: "Please Enter Your Password ", buttonTitle: "Ok")
-//      case (nil,_):
-//          view.showAlert(title: "Empty Username", message: "Please Enter Your Username ", buttonTitle: "Ok")
-//      default:
-//          break
-//      }
-//      guard !usernameText.trimmingCharacters(in: .whitespaces).isEmpty, !passwordText.trimmingCharacters(in: .whitespaces).isEmpty else { return}
-  }
+        guard changeEmail.contains("@") && changeEmail.contains(".") && changeEmail.range(of: Register.specialCharacterRegEx, options: .regularExpression) != nil else {
+            view?.showAlert(title: "Email Address Wrong", message: "Your email address has to include '@' and at least one special character. ", buttonTitle: "Ok")
+            return
+        }
+        guard changePassword.count >= 6 && changePassword.range(of: Register.capitalLetterRegEx, options: .regularExpression) != nil && changePassword.range(of: Register.numberRegEx, options: .regularExpression) != nil && changePassword.range(of: Register.specialCharacterRegEx, options: .regularExpression) != nil  else {
+            view?.showAlert(title: "Password Requirements Not Met", message: "Your password has to be 6 or more characters, include at least one uppercase letter, at least one number, and at least one special character.", buttonTitle: "Ok")
+            return
+        }
+        let db = Firestore.firestore()
+        
+        // Perform a query to check if a document with the given email and password exists
+        db.collection("users")
+            .whereField("email", isEqualTo: changeEmail)
+            .whereField("password", isEqualTo: changePassword)
+            .getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    print("Error querying Firestore: \(error.localizedDescription)")
+                    return
+                }
+                
+                // Check if there is a matching document
+                if let document = querySnapshot?.documents.first {
+                    // Document found, proceed with signing in
+                    self.validate(user: changeEmail, password: changePassword)
+                } else {
+                    // No matching document, show an error
+                    self.view?.showAlert(title: "Invalid Credentials", message: "Email or password is incorrect", buttonTitle: "Ok")
+                }
+            }
+       
+
+        
+    }
+    func validate(user:String,password:String){
+        Auth.auth().signIn(withEmail: user, password: password) { _, error in
+          
+            if let error = error {
+                print(error.localizedDescription)
+                self.view?.showAlert(title: "Sign In Failed", message: "Check your email and password", buttonTitle: "Ok")
+            }else{
+                self.view?.getValues()
+            }
+           
+        }
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class GFAlert : UIViewController{
     let containerView = GFContainerView()
-    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20, color: .label, text: "")
+    let titleLabel = GFTitleLabel(textAlignment: .left, fontSize: 18, color: .label, text: "")
     let messageLabel = GFBodyLabel(textAlignment: .center, color: .secondaryLabel, text: "")
     let actionButton = GFButton(backgroundColor: .systemRed, title: "Ok")
     
@@ -18,7 +18,7 @@ class GFAlert : UIViewController{
     var message: String?
     var buttonTitle: String?
     
-    let padding: CGFloat = 40
+    let padding: CGFloat = 20
     
     init(title:String, message:String, buttonTitle:String){
         super.init(nibName: nil, bundle: nil)
@@ -47,8 +47,8 @@ class GFAlert : UIViewController{
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            containerView.widthAnchor.constraint(equalToConstant: 280),
-            containerView.heightAnchor.constraint(equalToConstant: 220)
+            containerView.widthAnchor.constraint(equalToConstant: 290),
+            containerView.heightAnchor.constraint(equalToConstant: 250)
         ])
         
     }
@@ -56,7 +56,7 @@ class GFAlert : UIViewController{
     func configureTitleLabel(){
         containerView.addSubview(titleLabel)
         titleLabel.text = alertTitle ?? "Something went Wrong"
-        
+        titleLabel.numberOfLines = 3
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
             titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),

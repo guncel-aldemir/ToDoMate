@@ -7,9 +7,11 @@
 
 import Foundation
 import FirebaseAuth
+
 protocol ProfileViewModelInterface {
     func viewDidLoad()
-    func logoutAccount()
+    func logoutAccount()->Bool
+    func presentLogin()
     
 }
 final class ProfileViewModel{
@@ -23,13 +25,23 @@ extension ProfileViewModel:ProfileViewModelInterface{
         
     }
    
-    func logoutAccount(){
-        print("girdi")
-        do {
-            try Auth.auth().signOut()
-            print("bitirdi")
-        }catch{
-            print("hata var")
+    func logoutAccount() -> Bool{
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                presentLogin()
+               return true
+            }catch{
+                print("can not sign out ")
+                return false
+            }
         }
+        return false
+    }
+    func presentLogin() {
+        
+//        let loginVC = LoginViewController(viewModel: LoginViewModel())
+//        loginVC.modalPresentationStyle = .fullScreen
+      view?.loginStart()
     }
 }
