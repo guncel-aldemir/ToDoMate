@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeViewModelInterface:AnyObject {
     func viewDidLoad()
+    func addList()
 }
 final class HomeViewModel {
     weak var view : HomeViewInterface?
@@ -19,5 +20,8 @@ final class HomeViewModel {
 extension HomeViewModel:HomeViewModelInterface {
     func viewDidLoad() {
         view?.configure()
+    }
+    func addList() {
+        
     }
 }

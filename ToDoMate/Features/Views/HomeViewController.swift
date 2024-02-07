@@ -30,10 +30,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
        
     }
-    
-    
-    
-
 }
 extension HomeViewController:HomeViewInterface{
     
@@ -43,6 +39,9 @@ extension HomeViewController:HomeViewInterface{
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addToDo))
     }
     @objc func addToDo() {
-        print("click to do ")
+        let addNew = NewItemViewController(viewModel: NewItemViewModel())
+        
+        navigationController?.pushViewController(addNew, animated: true)
+       
     }
 }

@@ -18,8 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         self.setupWindow(with: scene)
         self.checkAuthentication()
-        
-        
     }
     private func setupWindow(with scene:UIScene){
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -27,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
     }
-    
     func checkAuthentication(){
         if let _ = Auth.auth().currentUser{
             self.window?.rootViewController = GFTabBarController()

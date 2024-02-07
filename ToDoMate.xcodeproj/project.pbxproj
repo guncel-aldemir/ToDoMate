@@ -38,6 +38,10 @@
 		FA9086582B6EF96E00119009 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9086572B6EF96E00119009 /* GFButton.swift */; };
 		FA90865A2B6EFCA100119009 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9086592B6EFCA100119009 /* GFBodyLabel.swift */; };
 		FA90865D2B6F010000119009 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90865C2B6F010000119009 /* UIView+Ext.swift */; };
+		FAF22E202B738C3C00045A06 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E1F2B738C3C00045A06 /* ToDoTableViewCell.swift */; };
+		FAF22E222B73909100045A06 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E212B73909100045A06 /* NewItemViewController.swift */; };
+		FAF22E242B7390B100045A06 /* NewItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E232B7390B100045A06 /* NewItemViewModel.swift */; };
+		FAF22E272B73962100045A06 /* GFDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E262B73962100045A06 /* GFDatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +75,10 @@
 		FA9086572B6EF96E00119009 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		FA9086592B6EFCA100119009 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		FA90865C2B6F010000119009 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		FAF22E1F2B738C3C00045A06 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		FAF22E212B73909100045A06 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		FAF22E232B7390B100045A06 /* NewItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewModel.swift; sourceTree = "<group>"; };
+		FAF22E262B73962100045A06 /* GFDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +161,7 @@
 		FA90863B2B6ED45D00119009 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FAF22E1E2B738BF100045A06 /* Cells */,
 				FA1758552B72F1690056B783 /* Application */,
 				FA114B212B712F1700A3A264 /* Utilities */,
 				FA90865B2B6F00EF00119009 /* Extensions */,
@@ -168,6 +177,7 @@
 				FA9086442B6EDE2C00119009 /* ProfileViewController.swift */,
 				FA9086462B6EE15A00119009 /* LoginViewController.swift */,
 				FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */,
+				FAF22E212B73909100045A06 /* NewItemViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9086542B6EF10900119009 /* LoginViewModel.swift */,
+				FAF22E232B7390B100045A06 /* NewItemViewModel.swift */,
 				FA81391F2B700B0100F1D597 /* RegisterViewModel.swift */,
 				FA114B282B71886500A3A264 /* ProfileViewModel.swift */,
 				FA1758502B72EB530056B783 /* HomeViewModel.swift */,
@@ -204,6 +215,7 @@
 		FA9086482B6EE16900119009 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAF22E252B73960B00045A06 /* DatePickers */,
 				FA1758542B72EF5B0056B783 /* TableViews */,
 				FA8139232B70316000F1D597 /* Alerts */,
 				FA9086562B6EF96100119009 /* Buttons */,
@@ -257,6 +269,22 @@
 				FA114B262B7169EB00A3A264 /* Encodable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAF22E1E2B738BF100045A06 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAF22E1F2B738C3C00045A06 /* ToDoTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAF22E252B73960B00045A06 /* DatePickers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF22E262B73962100045A06 /* GFDatePicker.swift */,
+			);
+			path = DatePickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,11 +371,14 @@
 				FA8139222B7030DE00F1D597 /* UIViewController+Ext.swift in Sources */,
 				FA8139282B7031EC00F1D597 /* GFContainerView.swift in Sources */,
 				FA9086472B6EE15A00119009 /* LoginViewController.swift in Sources */,
+				FAF22E202B738C3C00045A06 /* ToDoTableViewCell.swift in Sources */,
 				FA8139202B700B0100F1D597 /* RegisterViewModel.swift in Sources */,
 				FA9086582B6EF96E00119009 /* GFButton.swift in Sources */,
 				FA90865D2B6F010000119009 /* UIView+Ext.swift in Sources */,
+				FAF22E272B73962100045A06 /* GFDatePicker.swift in Sources */,
 				FA9086552B6EF10900119009 /* LoginViewModel.swift in Sources */,
 				FA81391E2B700AF000F1D597 /* RegisterViewController.swift in Sources */,
+				FAF22E222B73909100045A06 /* NewItemViewController.swift in Sources */,
 				FA90864A2B6EE1DB00119009 /* GFHeaderView.swift in Sources */,
 				FA9086412B6EDC3300119009 /* GFTabBarController.swift in Sources */,
 				FA90864F2B6EE23700119009 /* GFSubtitleLabel.swift in Sources */,
@@ -358,6 +389,7 @@
 				FA9086452B6EDE2C00119009 /* ProfileViewController.swift in Sources */,
 				FA8139252B70317800F1D597 /* GFAlert.swift in Sources */,
 				FA1758532B72EF570056B783 /* GFTableView.swift in Sources */,
+				FAF22E242B7390B100045A06 /* NewItemViewModel.swift in Sources */,
 				FA1758512B72EB530056B783 /* HomeViewModel.swift in Sources */,
 				FA9086202B6EC16400119009 /* SceneDelegate.swift in Sources */,
 				FA9086432B6EDE0800119009 /* HomeViewController.swift in Sources */,

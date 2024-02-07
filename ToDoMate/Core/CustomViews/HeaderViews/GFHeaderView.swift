@@ -31,7 +31,6 @@ class GFHeaderView: UIView {
     func configure(){
         
         addSubview(mainTitle)
-        mainTitle.layer.zPosition = 100
         addSubview(secondaryTitle)
         NSLayoutConstraint.activate([
             mainTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor),
