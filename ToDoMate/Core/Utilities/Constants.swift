@@ -20,6 +20,7 @@ enum Heights {
     static let headerViewHeight:CGFloat = 300
     static let staticLabelHeight:CGFloat = 20
     static let createLabelHeight:CGFloat = 20
+    static let createAddView : CGFloat = 160
 }
 
 enum Register {

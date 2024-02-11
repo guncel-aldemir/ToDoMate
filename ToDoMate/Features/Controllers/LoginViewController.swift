@@ -52,7 +52,7 @@ final class LoginViewController: UIViewController{
     fileprivate func configureHeader(){
         view.addSubview(headerView)
         
-        headerView.translatesAutoresizingMaskIntoConstraints = false
+       // headerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.topAnchor),

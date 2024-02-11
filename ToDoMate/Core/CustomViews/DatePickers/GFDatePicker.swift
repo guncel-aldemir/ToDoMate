@@ -23,14 +23,10 @@ final class GFDatePicker:UIDatePicker{
         datePickerMode = .dateAndTime
         preferredDatePickerStyle = .inline
         translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     
-    func donePicker(object:UITextField){
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.dateFormat = "dd.MM.yyyy"
-        object.text = formatter.string(from: self.date)
-    }
+   
    
 }

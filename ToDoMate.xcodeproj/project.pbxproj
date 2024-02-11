@@ -38,6 +38,12 @@
 		FA9086582B6EF96E00119009 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9086572B6EF96E00119009 /* GFButton.swift */; };
 		FA90865A2B6EFCA100119009 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9086592B6EFCA100119009 /* GFBodyLabel.swift */; };
 		FA90865D2B6F010000119009 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90865C2B6F010000119009 /* UIView+Ext.swift */; };
+		FAED5E3D2B7642E10066A558 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED5E3C2B7642E10066A558 /* Todos.swift */; };
+		FAED5E412B7792850066A558 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED5E402B7792850066A558 /* DateView.swift */; };
+		FAED5E442B77BFC90066A558 /* GFCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED5E432B77BFC90066A558 /* GFCollectionView.swift */; };
+		FAED5E462B77C0B90066A558 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED5E452B77C0B90066A558 /* DateCollectionViewCell.swift */; };
+		FAED5E482B77E6320066A558 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED5E472B77E6320066A558 /* UIHelper.swift */; };
+		FAED5E4A2B77E7FF0066A558 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED5E492B77E7FF0066A558 /* CalendarHelper.swift */; };
 		FAF22E202B738C3C00045A06 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E1F2B738C3C00045A06 /* ToDoTableViewCell.swift */; };
 		FAF22E222B73909100045A06 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E212B73909100045A06 /* NewItemViewController.swift */; };
 		FAF22E242B7390B100045A06 /* NewItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF22E232B7390B100045A06 /* NewItemViewModel.swift */; };
@@ -75,6 +81,12 @@
 		FA9086572B6EF96E00119009 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		FA9086592B6EFCA100119009 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		FA90865C2B6F010000119009 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		FAED5E3C2B7642E10066A558 /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
+		FAED5E402B7792850066A558 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		FAED5E432B77BFC90066A558 /* GFCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFCollectionView.swift; sourceTree = "<group>"; };
+		FAED5E452B77C0B90066A558 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAED5E472B77E6320066A558 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		FAED5E492B77E7FF0066A558 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		FAF22E1F2B738C3C00045A06 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		FAF22E212B73909100045A06 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		FAF22E232B7390B100045A06 /* NewItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FA114B222B712F2D00A3A264 /* Constants.swift */,
+				FAED5E492B77E7FF0066A558 /* CalendarHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -173,11 +186,7 @@
 		FA90863C2B6ED46600119009 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA9086422B6EDE0800119009 /* HomeViewController.swift */,
-				FA9086442B6EDE2C00119009 /* ProfileViewController.swift */,
-				FA9086462B6EE15A00119009 /* LoginViewController.swift */,
-				FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */,
-				FAF22E212B73909100045A06 /* NewItemViewController.swift */,
+				FAED5E402B7792850066A558 /* DateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				FA114B2A2B71946800A3A264 /* RegisterUser.swift */,
+				FAED5E3C2B7642E10066A558 /* Todos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 		FA90863F2B6ED61000119009 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FAED5E4B2B78216A0066A558 /* Controllers */,
 				FA90863C2B6ED46600119009 /* Views */,
 				FA90863D2B6ED47000119009 /* ViewModels */,
 				FA90863E2B6ED47E00119009 /* Models */,
@@ -215,6 +226,7 @@
 		FA9086482B6EE16900119009 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAED5E422B77BFB10066A558 /* CollectionViews */,
 				FAF22E252B73960B00045A06 /* DatePickers */,
 				FA1758542B72EF5B0056B783 /* TableViews */,
 				FA8139232B70316000F1D597 /* Alerts */,
@@ -267,14 +279,36 @@
 				FA90865C2B6F010000119009 /* UIView+Ext.swift */,
 				FA8139212B7030DE00F1D597 /* UIViewController+Ext.swift */,
 				FA114B262B7169EB00A3A264 /* Encodable.swift */,
+				FAED5E472B77E6320066A558 /* UIHelper.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAED5E422B77BFB10066A558 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAED5E432B77BFC90066A558 /* GFCollectionView.swift */,
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		FAED5E4B2B78216A0066A558 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA9086442B6EDE2C00119009 /* ProfileViewController.swift */,
+				FA9086462B6EE15A00119009 /* LoginViewController.swift */,
+				FA81391D2B700AEF00F1D597 /* RegisterViewController.swift */,
+				FAF22E212B73909100045A06 /* NewItemViewController.swift */,
+				FA9086422B6EDE0800119009 /* HomeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FAF22E1E2B738BF100045A06 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FAF22E1F2B738C3C00045A06 /* ToDoTableViewCell.swift */,
+				FAED5E452B77C0B90066A558 /* DateCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -367,9 +401,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA90865A2B6EFCA100119009 /* GFBodyLabel.swift in Sources */,
+				FAED5E462B77C0B90066A558 /* DateCollectionViewCell.swift in Sources */,
 				FA9086532B6EF08800119009 /* GFTextField.swift in Sources */,
 				FA8139222B7030DE00F1D597 /* UIViewController+Ext.swift in Sources */,
+				FAED5E412B7792850066A558 /* DateView.swift in Sources */,
 				FA8139282B7031EC00F1D597 /* GFContainerView.swift in Sources */,
+				FAED5E442B77BFC90066A558 /* GFCollectionView.swift in Sources */,
 				FA9086472B6EE15A00119009 /* LoginViewController.swift in Sources */,
 				FAF22E202B738C3C00045A06 /* ToDoTableViewCell.swift in Sources */,
 				FA8139202B700B0100F1D597 /* RegisterViewModel.swift in Sources */,
@@ -383,14 +420,17 @@
 				FA9086412B6EDC3300119009 /* GFTabBarController.swift in Sources */,
 				FA90864F2B6EE23700119009 /* GFSubtitleLabel.swift in Sources */,
 				FA90861E2B6EC16400119009 /* AppDelegate.swift in Sources */,
+				FAED5E4A2B77E7FF0066A558 /* CalendarHelper.swift in Sources */,
 				FA90864D2B6EE20800119009 /* GFTitleLabel.swift in Sources */,
 				FA114B292B71886600A3A264 /* ProfileViewModel.swift in Sources */,
 				FA114B232B712F2D00A3A264 /* Constants.swift in Sources */,
 				FA9086452B6EDE2C00119009 /* ProfileViewController.swift in Sources */,
 				FA8139252B70317800F1D597 /* GFAlert.swift in Sources */,
 				FA1758532B72EF570056B783 /* GFTableView.swift in Sources */,
+				FAED5E3D2B7642E10066A558 /* Todos.swift in Sources */,
 				FAF22E242B7390B100045A06 /* NewItemViewModel.swift in Sources */,
 				FA1758512B72EB530056B783 /* HomeViewModel.swift in Sources */,
+				FAED5E482B77E6320066A558 /* UIHelper.swift in Sources */,
 				FA9086202B6EC16400119009 /* SceneDelegate.swift in Sources */,
 				FA9086432B6EDE0800119009 /* HomeViewController.swift in Sources */,
 				FA114B272B7169EB00A3A264 /* Encodable.swift in Sources */,

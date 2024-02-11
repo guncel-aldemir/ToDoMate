@@ -45,7 +45,7 @@ extension ProfileViewController:ProfileInterface{
         view.addSubview(headerView)
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
-        headerView.translatesAutoresizingMaskIntoConstraints = false
+        //headerView.translatesAutoresizingMaskIntoConstraints = false
        logoutButton.click(targetOne: self, action: #selector(register), controlEvents: .touchUpInside)
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.topAnchor),

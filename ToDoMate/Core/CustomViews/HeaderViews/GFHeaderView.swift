@@ -29,7 +29,7 @@ class GFHeaderView: UIView {
     
 
     func configure(){
-        
+        translatesAutoresizingMaskIntoConstraints = false
         addSubview(mainTitle)
         addSubview(secondaryTitle)
         NSLayoutConstraint.activate([

@@ -25,6 +25,7 @@ class GFAlert : UIViewController{
         self.alertTitle = title
         self.message = message
         self.buttonTitle = buttonTitle
+       
     }
     
     required init?(coder: NSCoder) {
@@ -79,6 +80,7 @@ class GFAlert : UIViewController{
     }
     
     @objc func dismissVC(){
+        
         dismiss(animated: true)
     }
     
