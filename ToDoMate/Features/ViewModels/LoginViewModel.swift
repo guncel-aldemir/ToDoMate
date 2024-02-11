@@ -9,10 +9,6 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 protocol LoginViewInterface:AnyObject {
-    
-    // var view:LoginViewControllerInterface? {get set}
-    //    var usernameText:String? {get set}
-    //    var passwordText:String? {get set}
     func login()
     func viewDidLoad()
     func validate(user:String,password:String)
@@ -22,7 +18,7 @@ final class LoginViewModel {
     var passwordText:String?
     
     weak var view: LoginViewControllerInterface?
-    
+    weak var loginDelegate:LoginViewInterface?
 }
 extension LoginViewModel:LoginViewInterface {
     func viewDidLoad() {

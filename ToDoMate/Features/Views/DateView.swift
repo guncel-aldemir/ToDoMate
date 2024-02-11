@@ -6,10 +6,13 @@
 //
 
 import UIKit
-
+protocol DateViewDelegate: AnyObject {
+    func didSelectDate(_ date: Date)
+}
 class DateView: UIViewController {
 
-    
+    weak var delegate: DateViewDelegate?
+
     let dateTitle = GFTitleLabel(textAlignment: .center, fontSize: 18, color: .label, text:"Label")
     let nextButton = GFButton(backgroundColor: .systemBlue, title: ">")
     let backButton = GFButton(backgroundColor: .systemBlue, title: "<")
@@ -23,6 +26,7 @@ class DateView: UIViewController {
         setWeekView()
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     func setWeekView(){
@@ -35,7 +39,7 @@ class DateView: UIViewController {
                     totalSquare.append(current)
                     current = CalendarHelper().addDays(date: current, days: 1)
                 }
-                
+        
         dateTitle.text = CalendarHelper().monthString(date: selectedDate) + "." + CalendarHelper().yearString(date: selectedDate)
         collectionView.reloadData()
     }
@@ -106,7 +110,7 @@ extension DateView:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         
         if (date == selectedDate){
             cell.backgroundColor = .systemGreen
-            print(selectedDate)
+            //print(selectedDate)
         }else{
             cell.backgroundColor = .systemBackground
         }
@@ -116,6 +120,8 @@ extension DateView:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDate = totalSquare[indexPath.item]
         collectionView.reloadData()
+        delegate?.didSelectDate(selectedDate)
+        print("her seferinde çalışacak = \(selectedDate)")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -127,3 +133,4 @@ extension DateView:UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     }
     
 }
+

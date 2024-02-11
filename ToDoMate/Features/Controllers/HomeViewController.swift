@@ -10,14 +10,17 @@ import UIKit
 protocol HomeViewInterface:AnyObject {
     func configure()
     func addToDo()
-   
-    
+    func showValues(with datas:[Todos])
+    func showAlert(title:String,message:String,buttonTitle:String)
+  
 }
 class HomeViewController: UIViewController {
  
     private var homeViewModel: HomeViewModel?
     var dateVC:DateView!
     var tableView = GFTableView(cell: ToDoTableViewCell.self, identifier: ToDoTableViewCell.identifier)
+    var allDatas = [Todos]()
+    var datePass:Date?
     init(viewModel:HomeViewModel){
         super.init(nibName: nil, bundle: nil)
         self.homeViewModel = viewModel
@@ -37,6 +40,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createChild()
+        homeViewModel?.getValues()
+        
         print("tekrar oluşturuldu")
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,11 +52,9 @@ class HomeViewController: UIViewController {
         dateVC.removeFromParent()
         print("silindi")
     }
-    
+ 
 }
-extension HomeViewController:HomeViewInterface{
-   
-    
+extension HomeViewController:HomeViewInterface, DateViewDelegate{
     func configure() {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
@@ -61,10 +64,12 @@ extension HomeViewController:HomeViewInterface{
        
         createChild()
         createTableView()
-       
+        tableView.reloadData()
     }
     func createChild(){
         dateVC = DateView()
+        dateVC.delegate = self
+        
         addChild(dateVC)
         guard let dateView = dateVC.view else{
             return
@@ -83,7 +88,7 @@ extension HomeViewController:HomeViewInterface{
     func createTableView(){
         view.addSubview(tableView)
         
-        let dateView = dateVC.view
+       
         guard let dateView = dateVC.view else{
             return
         }
@@ -99,15 +104,39 @@ extension HomeViewController:HomeViewInterface{
         let addNew = NewItemViewController(viewModel: NewItemViewModel())
         navigationController?.pushViewController(addNew, animated: true)
     }
+    
+    func showValues(with datas: [Todos]) {
+        print("datas => \(datas)")
+       allDatas = datas
+        tableView.reloadData()
+    }
+    func showAlert(title:String,message:String,buttonTitle:String){
+        presentGFAlert(title: title, message: message, buttonTitle: buttonTitle)
+    }
+    func didSelectDate(_ date: Date) {
+        print("dates=> asd:: \(date)")
+        datePass = date
+        print("datepass=> hadi:: \(datePass)")
+    }
+    
 }
 extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ToDoTableViewCell.identifier, for: indexPath) as! ToDoTableViewCell
-        cell.goalTitle.text = "deneme"
+        
+        let todoName = allDatas[indexPath.row]
+        cell.goalTitle.text = todoName.addTodo
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        return  allDatas.count 
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            print("deneme")
+        }
+    }
 }
+
+
